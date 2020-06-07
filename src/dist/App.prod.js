@@ -1,0 +1,1 @@
+"use strict";var _react=_interopRequireDefault(require("react"));require("./App.css");var _header=_interopRequireDefault(require("./Components/header"));function _interopRequireDefault(e){return e&&e.__esModule?e:{default:e}}
