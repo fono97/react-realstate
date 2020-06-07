@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Header from "./Components/header.js";
-import Filter from "./Components/Filter.js";
-import Listing from "./Components/listing.js";
+import Header from "./Component/header";
+import Filter from "./Component/filter";
+import Listing from "./Component/listing";
 
 
 class App extends Component {
