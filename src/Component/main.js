@@ -5,8 +5,7 @@ import styled from "@emotion/styled";
 const Main = () => {
   const MainContent = styled.main`
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     width: 100%;
   `;
   return (

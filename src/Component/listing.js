@@ -1,72 +1,92 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMapMarker } from '@fortawesome/free-brands-svg-icons' //this is used for a social media icon
-
-import { faList, faTh, faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarker, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
 const Listing = () => {
+  const Section = styled.section`
+    width: 50%;
+    height: 100vh;
+    background-color: #f2f2f2;
+  `;
+  const ConTitle = styled.div`
+    text-align: center;
+  `;
+
+  const Title = styled.h2`
+    font-family: "Arial, Helvetica, sans-serif";
+    color: black;
+  `;
+  const Properties = styled.div`
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+  `;
+  const Article = styled.article`
+    background-color: white;
+  `;
+const Info = styled.div`
+position: relative;
+`
+  const Address = styled.address`
+position: absolute;
+top:80%;
+left:10%;
+color:white;
+font-size:1.3rem;
+`
+
+  const ImageContainer = styled.div`
+    
+    overflow: hidden;
+    cursor: pointer;
+    height: 20rem;
+  `;
+  const Image = styled.img`
+    height: 100%;
+    width: 100%;
+  `;
+  const Location = styled.div`
+  margin-left:20px;
+  color:orange;
+`
+   const Span = styled.span`
+     display:inline-block;
+     margin-left:10px;
+     color:black;
+   `
   return (
-    <section className="listing">
-      <section className="search-area">
-        <input type="text" name="search" />
-      </section>
-      <section className="sortby-area">
-        <div>390 results found</div>
-        <div className="sort-options">
-          <select name="sortby" className="sortby">
-            <option value="price-asc">Highest Price</option>
-            <option value="price-dsc">Lowest Price</option>
-          </select>
-        </div>
-        <div>
-          <FontAwesomeIcon icon={faList} />
-          <FontAwesomeIcon icon={faTh} />
-        </div>
-      </section>
-      <section className="listings-results">
-        <div className="listing">
-          <div className="listing-img">
-            <span className="Address">Address</span>
-            <div className="details">
-              <div className="user-img"></div>
-              <div className="user-details">
-                <span className="user-name">Nina Smith</span>
-                <span className="post-date">05/05/2017</span>
-              </div>
-              <div className="listing-details">
-                <div className="floor-space">
-                  <i className="fas fa-square"></i>
-                  <span>1000 ft&sup2;</span>
-                </div>
-                <div className="bedrooms">
-                  <i className="fas fa-bed"></i>
-                  <span>3 bedrooms</span>
-                </div>
-              </div>
-            </div>
+    <Section>
+      <ConTitle>
+        <Title>these are all the properties</Title>
+      </ConTitle>
+      <Properties className="all-properties">
+        <Article>
+          <div className="single-items">
+            <Info >
+              <ImageContainer className="image-container">
+                <Image className="house-img" src="images/img-1.jpg" />
+              </ImageContainer>
+              <Address>7598 duneiden lane</Address>
+            </Info>
+            <Location className="location">
+              <p>
+                <FontAwesomeIcon icon={faDollarSign} />
+                <Span>350/month</Span>
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faMapMarker} />
+                <Span>Manassas</Span>
+              </p>
+            </Location>
           </div>
-          <div className="bottom-info">
-            <span>$1000 / month</span>
-            <span>
-              {" "}
-              <FontAwesomeIcon icon={faMapMarker} />
-              Manassas
-            </span>
-          </div>
-        </div>
-      </section>
-      <section className="pagination">
-        <ul>
-          <li>Prev</li>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>Next</li>
-        </ul>
-      </section>
-    </section>
+        </Article>
+      </Properties>
+    </Section>
   );
 };
 
