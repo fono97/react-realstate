@@ -6,7 +6,9 @@ const Main = () => {
   const MainContent = styled.main`
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items:flex-start;
+    background-color:#f2f2f2;
+    width: 100vw;
   `;
   return (
     <MainContent>

@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarker, faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarker, faDollarSign, faListUl,faTh } from "@fortawesome/free-solid-svg-icons";
 
 const Listing = () => {
   const Section = styled.section`
     width: 50%;
-    height: 100vh;
-    background-color: #f2f2f2;
   `;
   const ConTitle = styled.div`
     text-align: center;
@@ -103,8 +101,8 @@ const Listing = () => {
   const AgentDetail = styled.div`
     display: flex;
     justify-content: space-between;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
   `;
   const ImgAgent = styled.div`
     width: 50px;
@@ -127,35 +125,153 @@ const Listing = () => {
   `;
   const ImgAgentDetail = styled.div`
     margin: 0;
-    padding:0;
+    padding: 0;
   `;
   const Pagination = styled.div`
-  margin-left:5vw;
-  `
+    margin-left: 5vw;
+  `;
   const Ul = styled.ul`
-  width:50%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `;
+  const Li1 = styled.li`
+    display: block;
+    padding: 0px 3px;
+    color: white;
+    list-style: none;
+    font-size: 1.1rem;
+    background-color: red;
+    cursor: pointer;
+  `;
+  const Li = styled.li`
+    list-style: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  `;
+  const TitleContainer = styled.div`
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  width:600px;
+  margin-top:2rem;
+  `
+  const Input = styled.input`
+  width:70%;
+  height:1.2rem;
+  `
+  const Select = styled.select`
+  width:25%;
+  height:1.3rem;
+  `
+  const Option = styled.option`
+  `
+  const Icon = styled.div`
+  width:10%;
   display:flex;
   justify-content:space-between;
   align-items:center;
   `
-  const Li1 = styled.li`
-  display:block;
-  padding:0px 3px;
-  color:white;
-  list-style:none;
-  font-size:1.1rem;
-  background-color:red;
-  `
-  const Li = styled.li`
-  list-style:none;
-  font-size:1.1rem;
-  `
+
+  
+
   return (
     <Section>
+      <Pagination>
+        <TitleContainer>
+          <Input />
+          <Select>
+            <Option>manassas</Option>
+            <Option>fairfax</Option>
+          </Select>
+        </TitleContainer>
+        <TitleContainer>
+        <p>3920 result found</p>
+          <select>
+            <option>manassas</option>
+            <option>fairfax</option>
+          </select>
+          <Icon>
+            <div><FontAwesomeIcon icon={faListUl} /></div>
+            <div><FontAwesomeIcon icon={faTh} /></div>
+          </Icon>
+        </TitleContainer>
+      </Pagination>
       <ConTitle>
         <Title>these are all the properties</Title>
       </ConTitle>
       <Properties className="all-properties">
+        <Article>
+          <div className="single-items">
+            <Info>
+              <ImageContainer className="image-container">
+                <Image src="images/img-5.jpg" />
+              </ImageContainer>
+              <Address>7598 duneiden lane</Address>
+              <Container>
+                <AgentListing className="detail-listing">
+                  <AgentDetail className="agent-detail">
+                    <ImgAgent>
+                      <ImgPhoto src="images/img-3.jpg" />
+                    </ImgAgent>
+                    <ImgAgentDetail>
+                      <p>gabriel fono</p>
+                      <p>posted on june 29 1991</p>
+                      <span>7 bed rooms</span>
+                      <ViewMap>View listing</ViewMap>
+                    </ImgAgentDetail>
+                  </AgentDetail>
+                </AgentListing>
+              </Container>
+            </Info>
+            <Location className="location">
+              <p>
+                <FontAwesomeIcon icon={faDollarSign} />
+                <Span>350/month</Span>
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faMapMarker} />
+                <Span>Manassas</Span>
+              </p>
+            </Location>
+          </div>
+        </Article>
+        <Article>
+          <div className="single-items">
+            <Info>
+              <ImageContainer className="image-container">
+                <Image src="images/img-1.jpg" />
+              </ImageContainer>
+              <Address>7598 duneiden lane</Address>
+              <Container>
+                <AgentListing className="detail-listing">
+                  <AgentDetail className="agent-detail">
+                    <ImgAgent>
+                      <ImgPhoto src="images/img-7.jpg" />
+                    </ImgAgent>
+                    <ImgAgentDetail>
+                      <p>gabriel fono</p>
+                      <p>posted on june 29 1991</p>
+                      <span>7 bed rooms</span>
+                      <ViewMap>View listing</ViewMap>
+                    </ImgAgentDetail>
+                  </AgentDetail>
+                </AgentListing>
+              </Container>
+            </Info>
+            <Location className="location">
+              <p>
+                <FontAwesomeIcon icon={faDollarSign} />
+                <Span>350/month</Span>
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faMapMarker} />
+                <Span>Manassas</Span>
+              </p>
+            </Location>
+          </div>
+        </Article>
         <Article>
           <div className="single-items">
             <Info>
