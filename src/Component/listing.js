@@ -103,6 +103,8 @@ const Listing = () => {
   const AgentDetail = styled.div`
     display: flex;
     justify-content: space-between;
+    width:100%;
+    height:100%;
   `;
   const ImgAgent = styled.div`
     width: 50px;
@@ -127,6 +129,27 @@ const Listing = () => {
     margin: 0;
     padding:0;
   `;
+  const Pagination = styled.div`
+  margin-left:5vw;
+  `
+  const Ul = styled.ul`
+  width:50%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  `
+  const Li1 = styled.li`
+  display:block;
+  padding:0px 3px;
+  color:white;
+  list-style:none;
+  font-size:1.1rem;
+  background-color:red;
+  `
+  const Li = styled.li`
+  list-style:none;
+  font-size:1.1rem;
+  `
   return (
     <Section>
       <ConTitle>
@@ -169,6 +192,17 @@ const Listing = () => {
           </div>
         </Article>
       </Properties>
+      <Pagination>
+        <Ul>
+          <Li>Prev</Li>
+          <Li1>1</Li1>
+          <Li>2</Li>
+          <Li>3</Li>
+          <Li>4</Li>
+          <Li>5</Li>
+          <Li>Next</Li>
+        </Ul>
+      </Pagination>
     </Section>
   );
 };
