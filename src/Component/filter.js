@@ -99,6 +99,7 @@ const Filter = () => {
         </SpaceContainer>
 
         <SpaceContainer className="filters extras">
+          <h4>extras</h4>
           <Label htmlFor="extras">
             <LabelText>Elevator</LabelText>
             <Checkout name="extras" value="elevator" type="checkbox" />

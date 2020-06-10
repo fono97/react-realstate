@@ -20,7 +20,7 @@ const Listing = () => {
     margin: 0 auto;
     max-width: 600px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
   `;
@@ -189,8 +189,8 @@ const Listing = () => {
         <TitleContainer>
         <p>3920 result found</p>
           <select>
-            <option>manassas</option>
-            <option>fairfax</option>
+            <option>highest price</option>
+            <option>lowest price</option>
           </select>
           <Icon>
             <div><FontAwesomeIcon icon={faListUl} /></div>
@@ -206,9 +206,9 @@ const Listing = () => {
           <div className="single-items">
             <Info>
               <ImageContainer className="image-container">
-                <Image src="images/img-5.jpg" />
+                <Image src="images/img-8.jpg" />
               </ImageContainer>
-              <Address>7598 duneiden lane</Address>
+              <Address>7598 Winterthur lane</Address>
               <Container>
                 <AgentListing className="detail-listing">
                   <AgentDetail className="agent-detail">
@@ -241,9 +241,9 @@ const Listing = () => {
           <div className="single-items">
             <Info>
               <ImageContainer className="image-container">
-                <Image src="images/img-1.jpg" />
+                <Image src="images/img-6.jpg" />
               </ImageContainer>
-              <Address>7598 duneiden lane</Address>
+              <Address>19293 Fairfax </Address>
               <Container>
                 <AgentListing className="detail-listing">
                   <AgentDetail className="agent-detail">
