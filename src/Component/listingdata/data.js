@@ -6,9 +6,12 @@ let data = [
     agent: "Gabriel Fono",
     post: "june 20 1991",
     price: "4000000",
-    city: "manassas",
+    city: "Manassas",
     bed: "7bed rooms",
-    extras: ["Elevator", "SwimmingPool", "Finished basement", "gyms"],
+    extras:[
+        "elevator", "Swimming pool", "finished basement ","Basement gyms"
+    ]
+    
   },
   {
     address: "8383 Fairfax County",
@@ -19,7 +22,7 @@ let data = [
     price: "3000000",
     city: "Fairfax",
     bed: "3bed rooms",
-    extras: ["Elevator", "SwimmingPool", "Finished basement", "gyms"],
+   
   },
   {
     address: "78983 Woodbridge ",
@@ -30,7 +33,40 @@ let data = [
     price: "5000000",
     city: "Woodbrige",
     bed: "9bed rooms",
-    extras: ["Elevator", "SwimmingPool", "Finished basement", "gyms"],
+    
   },
+    {
+        address: "78983 Woodbridge ",
+        image: "images/img-4.jpg",
+        ImgAgent: "images/img-3.jpg",
+        agent: "Gabriel batisseur",
+        post: "september 19,1930",
+        price: "5000000",
+        city: "Woodbrige",
+        bed: "9bed rooms",
+
+    },
+    {
+        address: "78983 Woodbridge ",
+        image: "images/img-5.jpg",
+        ImgAgent: "images/img-3.jpg",
+        agent: "Gabriel batisseur",
+        post: "October 19,1930",
+        price: "5000000",
+        city: "Woodbrige",
+        bed: "9bed rooms",
+
+    },
+    {
+        address: "78983 Woodbridge ",
+        image: "images/img-6.jpg",
+        ImgAgent: "images/img-3.jpg",
+        agent: "Gabriel batisseur",
+        post: "October 19,1930",
+        price: "5000000",
+        city: "Woodbrige",
+        bed: "9bed rooms",
+
+    },
 ];
 export default data;

@@ -2,7 +2,7 @@ import React from "react";
 import Filter from "./filter";
 import Listing from "./listing";
 import styled from "@emotion/styled";
-const Main = () => {
+const Main = (props) => {
   const MainContent = styled.main`
     display: flex;
     justify-content: space-between;
@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <MainContent>
       <Filter />
-      <Listing />
+      <Listing listing = {props.data} />
     </MainContent>
   );
 };

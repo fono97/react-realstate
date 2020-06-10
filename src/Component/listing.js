@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarker, faDollarSign, faListUl,faTh } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMapMarker,
+  faDollarSign,
+  faListUl,
+  faTh,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Listing = () => {
+const Listing = (props) => {
   const Section = styled.section`
     width: 50%;
   `;
@@ -151,30 +156,69 @@ const Listing = () => {
     cursor: pointer;
   `;
   const TitleContainer = styled.div`
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  width:600px;
-  margin-top:2rem;
-  `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    margin-top: 2rem;
+  `;
   const Input = styled.input`
-  width:70%;
-  height:1.2rem;
-  `
+    width: 70%;
+    height: 1.2rem;
+  `;
   const Select = styled.select`
-  width:25%;
-  height:1.3rem;
-  `
-  const Option = styled.option`
-  `
+    width: 25%;
+    height: 1.3rem;
+  `;
+  const Option = styled.option``;
   const Icon = styled.div`
-  width:10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  `
-
-  
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `;
+  const loopListings = () => {
+    const listings = props.listing;
+    return listings.map((listing) => {
+      return (
+        <Article>
+          <div className="single-items">
+            <Info>
+              <ImageContainer className="image-container">
+                <Image src={listing.image} />
+              </ImageContainer>
+              <Address>{listing.address}</Address>
+              <Container>
+                <AgentListing className="detail-listing">
+                  <AgentDetail className="agent-detail">
+                    <ImgAgent>
+                      <ImgPhoto src={listing.ImgAgent} />
+                    </ImgAgent>
+                    <ImgAgentDetail>
+                      <p>{listing.name}</p>
+                      <p>{listing.post}</p>
+                      <span>{listing.bed}</span>
+                      <ViewMap>View listing</ViewMap>
+                    </ImgAgentDetail>
+                  </AgentDetail>
+                </AgentListing>
+              </Container>
+            </Info>
+            <Location className="location">
+              <p>
+                <FontAwesomeIcon icon={faDollarSign} />
+                <Span>{listing.price}</Span>
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faMapMarker} />
+                <Span>{listing.city}</Span>
+              </p>
+            </Location>
+          </div>
+        </Article>
+      );
+    });
+  };
 
   return (
     <Section>
@@ -187,127 +231,25 @@ const Listing = () => {
           </Select>
         </TitleContainer>
         <TitleContainer>
-        <p>3920 result found</p>
+          <p>3920 result found</p>
           <select>
             <option>highest price</option>
             <option>lowest price</option>
           </select>
           <Icon>
-            <div><FontAwesomeIcon icon={faListUl} /></div>
-            <div><FontAwesomeIcon icon={faTh} /></div>
+            <div>
+              <FontAwesomeIcon icon={faListUl} />
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faTh} />
+            </div>
           </Icon>
         </TitleContainer>
       </Pagination>
       <ConTitle>
         <Title>these are all the properties</Title>
       </ConTitle>
-      <Properties className="all-properties">
-        <Article>
-          <div className="single-items">
-            <Info>
-              <ImageContainer className="image-container">
-                <Image src="images/img-8.jpg" />
-              </ImageContainer>
-              <Address>7598 Winterthur lane</Address>
-              <Container>
-                <AgentListing className="detail-listing">
-                  <AgentDetail className="agent-detail">
-                    <ImgAgent>
-                      <ImgPhoto src="images/img-3.jpg" />
-                    </ImgAgent>
-                    <ImgAgentDetail>
-                      <p>gabriel fono</p>
-                      <p>posted on june 29 1991</p>
-                      <span>7 bed rooms</span>
-                      <ViewMap>View listing</ViewMap>
-                    </ImgAgentDetail>
-                  </AgentDetail>
-                </AgentListing>
-              </Container>
-            </Info>
-            <Location className="location">
-              <p>
-                <FontAwesomeIcon icon={faDollarSign} />
-                <Span>350/month</Span>
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faMapMarker} />
-                <Span>Manassas</Span>
-              </p>
-            </Location>
-          </div>
-        </Article>
-        <Article>
-          <div className="single-items">
-            <Info>
-              <ImageContainer className="image-container">
-                <Image src="images/img-6.jpg" />
-              </ImageContainer>
-              <Address>19293 Fairfax </Address>
-              <Container>
-                <AgentListing className="detail-listing">
-                  <AgentDetail className="agent-detail">
-                    <ImgAgent>
-                      <ImgPhoto src="images/img-7.jpg" />
-                    </ImgAgent>
-                    <ImgAgentDetail>
-                      <p>gabriel fono</p>
-                      <p>posted on june 29 1991</p>
-                      <span>7 bed rooms</span>
-                      <ViewMap>View listing</ViewMap>
-                    </ImgAgentDetail>
-                  </AgentDetail>
-                </AgentListing>
-              </Container>
-            </Info>
-            <Location className="location">
-              <p>
-                <FontAwesomeIcon icon={faDollarSign} />
-                <Span>350/month</Span>
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faMapMarker} />
-                <Span>Manassas</Span>
-              </p>
-            </Location>
-          </div>
-        </Article>
-        <Article>
-          <div className="single-items">
-            <Info>
-              <ImageContainer className="image-container">
-                <Image src="images/img-1.jpg" />
-              </ImageContainer>
-              <Address>7598 duneiden lane</Address>
-              <Container>
-                <AgentListing className="detail-listing">
-                  <AgentDetail className="agent-detail">
-                    <ImgAgent>
-                      <ImgPhoto src="images/img-3.jpg" />
-                    </ImgAgent>
-                    <ImgAgentDetail>
-                      <p>gabriel fono</p>
-                      <p>posted on june 29 1991</p>
-                      <span>7 bed rooms</span>
-                      <ViewMap>View listing</ViewMap>
-                    </ImgAgentDetail>
-                  </AgentDetail>
-                </AgentListing>
-              </Container>
-            </Info>
-            <Location className="location">
-              <p>
-                <FontAwesomeIcon icon={faDollarSign} />
-                <Span>350/month</Span>
-              </p>
-              <p>
-                <FontAwesomeIcon icon={faMapMarker} />
-                <Span>Manassas</Span>
-              </p>
-            </Location>
-          </div>
-        </Article>
-      </Properties>
+      <Properties className="all-properties">{loopListings()}</Properties>
       <Pagination>
         <Ul>
           <Li>Prev</Li>
