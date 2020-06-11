@@ -4,14 +4,12 @@ import styled from "@emotion/styled";
 
 const Filter = (props) => {
   const Section = styled.section`
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
-    
   `;
-  const CenterBox = styled.div`
-  `;
+  const CenterBox = styled.div``;
 
   const Title = styled.h4`
     font-family: "Arial, Helvetica, sans-serif";
@@ -63,59 +61,96 @@ const Filter = (props) => {
       <CenterBox>
         <Title>Filter</Title>
         <Container>
-          <Select name="neighbourhood" className=" filters neighbourhood" onChange = {props.change}>
-            <Option>Ridgewood</Option>
-            <Option>Manassas</Option>
+          <Select name="neighbourhood" onChange={props.change}>
+            <Option value="fairfax">fairfax</Option>
+            <Option value="Manassas">Manassas</Option>
+            <Option value="Miami">Miami</Option>
           </Select>
         </Container>
         <Container>
-          <Select name="housetype" className=" filters neighbourhood">
-            <Option> Ranch</Option>
+          <Select name="housetype" onChange={props.change}>
+            <Option value="Ranch"> Ranch</Option>
+            <Option value="Studio"> Apartment</Option>
+            <Option value="Studio"> Studio</Option>
+            <Option value="Room"> Room</Option>
           </Select>
         </Container>
         <Container>
-          <Select name="bedrooms" className=" filters bedrooms">
-            <Option> 2 Br</Option>
+          <Select
+            name="bedrooms"
+            className=" filters bedrooms"
+            onChange={props.change}
+          >
+            <Option value="2"> 2 BR</Option>
+            <Option value="3"> 2 BR</Option>
+            <Option value="4"> 4 BR</Option>
           </Select>
         </Container>
         <SpaceContainer>
           <Container className="filters price">
             <Span className="title">Price</Span>
-            <InputRight type="text" name="min-price" className="min-price" />
-            <InputLeft type="text" name="max-price" className="max-price" />
+            <InputRight
+              type="text"
+              name="min_price"
+              value={props.globalState.min_price}
+              onChange={props.change}
+            />
+            <InputLeft
+              type="text"
+              name="max_price"
+              value={props.globalState.max_price}
+              onChange={props.change}
+            />
           </Container>
           <Container className="filters floor-space">
             <Span className="title">Floor space</Span>
             <InputRight
               type="text"
-              name="min-floor-space"
-              className="min-floor-space"
+              name="min_floor_space"
+              value={props.globalState.min_floor_space}
+              onChange={props.change}
             />
             <InputLeft
               type="text"
-              name="max-floor-space"
-              className="max-floor-space"
+              name="max_floor_space"
+              value={props.globalState.max_floor_space}
+              className="max_floor_space"
+              onChange={props.change}
             />
           </Container>
         </SpaceContainer>
-
         <SpaceContainer className="filters extras">
           <h4>extras</h4>
           <Label htmlFor="extras">
             <LabelText>Elevator</LabelText>
-            <Checkout name="extras" value="elevator" type="checkbox" />
+            <Checkout name="elevator" value="elevator" type="checkbox" />
           </Label>
           <Label htmlFor="extras">
             <LabelText>Swimming Pool</LabelText>
-            <Checkout name="extras" value="swimming-pool" type="checkbox" />
+            <Checkout
+              name="swimming_pool"
+              value="swimming_pool"
+              type="checkbox"
+              onChange={props.change}
+            />
           </Label>
           <Label htmlFor="extras">
             <LabelText>finished Basement</LabelText>
-            <Checkout name="extras" value="finished basement" type="checkbox" />
+            <Checkout
+              name="finished_basement"
+              value="finished_basement"
+              type="checkbox"
+              onChange={props.change}
+            />
           </Label>
           <Label htmlFor="extras">
             <LabelText>gyms</LabelText>
-            <Checkout name="extras" value="gyms" type="checkbox" />
+            <Checkout
+              name="gyms"
+              value="gyms"
+              type="checkbox"
+              onChange={props.change}
+            />
           </Label>
         </SpaceContainer>
       </CenterBox>
