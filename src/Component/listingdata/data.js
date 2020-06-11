@@ -7,10 +7,7 @@ let data = [
     post: "june 20 1991",
     price: "4000000",
     city: "Manassas",
-    bed: "7bed rooms",
-    extras:[
-        "elevator", "Swimming pool", "finished basement ","Basement gyms"
-    ]
+    bed: "7bed rooms"
     
   },
   {

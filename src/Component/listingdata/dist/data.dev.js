@@ -12,8 +12,7 @@ var data = [{
   post: "june 20 1991",
   price: "4000000",
   city: "Manassas",
-  bed: "7bed rooms",
-  extras: ["elevator", "Swimming pool", "finished basement ", "Basement gyms"]
+  bed: "7bed rooms"
 }, {
   address: "8383 Fairfax County",
   image: "images/img-2.jpg",

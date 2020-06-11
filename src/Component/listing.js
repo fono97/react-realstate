@@ -179,9 +179,9 @@ const Listing = (props) => {
   `;
   const loopListings = () => {
     const listings = props.listing;
-    return listings.map((listing) => {
+    return listings.map((listing, i) => {
       return (
-        <Article>
+        <Article key = {i}>
           <div className="single-items">
             <Info>
               <ImageContainer className="image-container">
@@ -249,7 +249,7 @@ const Listing = (props) => {
       <ConTitle>
         <Title>these are all the properties</Title>
       </ConTitle>
-      <Properties className="all-properties">{loopListings()}</Properties>
+      <Properties >{loopListings()}</Properties>
       <Pagination>
         <Ul>
           <Li>Prev</Li>

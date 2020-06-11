@@ -12,7 +12,7 @@ const Main = (props) => {
   `;
   return (
     <MainContent>
-      <Filter />
+      <Filter  change= {props.change}/>
       <Listing listing = {props.data} />
     </MainContent>
   );

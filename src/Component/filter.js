@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "@emotion/styled";
 
-const Filter = () => {
+const Filter = (props) => {
   const Section = styled.section`
     display:flex;
     justify-content:center;
@@ -63,8 +63,9 @@ const Filter = () => {
       <CenterBox>
         <Title>Filter</Title>
         <Container>
-          <Select name="neighbourhood" className=" filters neighbourhood">
+          <Select name="neighbourhood" className=" filters neighbourhood" onChange = {props.change}>
             <Option>Ridgewood</Option>
+            <Option>Manassas</Option>
           </Select>
         </Container>
         <Container>
