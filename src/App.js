@@ -8,14 +8,14 @@ class App extends Component {
     super();
     this.state = {
       data,
-      min_price: 0,
-      max_price: 1000000,
-      min_floor_space: 0,
-      max_floor_space: 5000,
-      elevator: false,
-      swimming_pool: false,
-      finished_basement: false,
-      gyms: false,
+      min_price:0,
+      max_price:1000000,
+      min_floor_space : 0,
+      max_floor_space : 5000,
+      elevator:false,
+      swimming_pool:false,
+      finished_basement:false,
+      gyms:false
     };
     this.change = this.change.bind(this);
   }
@@ -38,11 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main
-          data={this.state.data}
-          change={this.change}
-          globalstate={this.state}
-        />
+        <Main data={this.state.data} change={this.change} globalState ={this.state}  />
       </div>
     );
   }

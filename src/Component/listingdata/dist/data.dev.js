@@ -21,8 +21,7 @@ var data = [{
   post: "November 19,1990",
   price: "3000000",
   city: "Fairfax",
-  bed: "3bed rooms",
-  homeType: "Apartment"
+  bed: "3bed rooms"
 }, {
   address: "78983 Woodbridge ",
   image: "images/img-3.jpg",
