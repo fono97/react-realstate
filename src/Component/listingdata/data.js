@@ -19,6 +19,7 @@ let data = [
     price: "3000000",
     city: "Fairfax",
     bed: "3bed rooms",
+    homeType:"Apartment"
    
   },
   {
