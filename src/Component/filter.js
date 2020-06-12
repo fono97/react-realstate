@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 const Filter = (props) => {
 const Section = styled.section`
 display:flex;
-justify-content:flex-end;
+justify-content:center;
 align-items:flex-start;
  grid-area:sidebar;
   width: 100%;
