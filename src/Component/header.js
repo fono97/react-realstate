@@ -46,7 +46,7 @@ const Header = () => {
   `;
   return (
     <HeaderStyle>
-      <Logo>logo</Logo>
+      <Logo>first react project</Logo>
       <NavBar>
         <Link>about me</Link>
         <Link>projects</Link>

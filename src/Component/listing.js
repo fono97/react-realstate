@@ -10,7 +10,8 @@ import {
 
 const Listing = (props) => {
   const Section = styled.section`
-    width: 50%;
+    grid-area: lister;
+    margin-top: 1.4rem;
   `;
   const ConTitle = styled.div`
     text-align: center;
@@ -119,9 +120,12 @@ const Listing = (props) => {
     height: 100%;
     border-radius: 50%;
   `;
-  const ViewMap = styled.p`
-    width: fit-content;
+  const ViewListing = styled.p`
     padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: pink;
     transition: background-color 0.5s ease-in-out;
     &:hover {
@@ -133,8 +137,9 @@ const Listing = (props) => {
     padding: 0;
   `;
   const Pagination = styled.div`
-    margin-left: 5vw;
+    margin-left: 7vw;
   `;
+
   const Ul = styled.ul`
     width: 30%;
     display: flex;
@@ -160,7 +165,6 @@ const Listing = (props) => {
     justify-content: space-between;
     align-items: center;
     width: 600px;
-    margin-top: 2rem;
   `;
   const Input = styled.input`
     width: 70%;
@@ -178,10 +182,10 @@ const Listing = (props) => {
     align-items: center;
   `;
   const loopListings = () => {
-    const listings = props.listing;
+    const listings = props.data;
     return listings.map((listing, i) => {
       return (
-        <Article key = {i}>
+        <Article key={i}>
           <div className="single-items">
             <Info>
               <ImageContainer className="image-container">
@@ -198,7 +202,7 @@ const Listing = (props) => {
                       <p>{listing.name}</p>
                       <p>{listing.post}</p>
                       <span>{listing.bed}</span>
-                      <ViewMap>View listing</ViewMap>
+                      <ViewListing> View listing</ViewListing>
                     </ImgAgentDetail>
                   </AgentDetail>
                 </AgentListing>
@@ -249,7 +253,7 @@ const Listing = (props) => {
       <ConTitle>
         <Title>these are all the properties</Title>
       </ConTitle>
-      <Properties >{loopListings()}</Properties>
+      <Properties>{loopListings()}</Properties>
       <Pagination>
         <Ul>
           <Li>Prev</Li>

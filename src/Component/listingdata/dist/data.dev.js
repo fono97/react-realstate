@@ -10,9 +10,13 @@ var data = [{
   ImgAgent: "images/img-1.jpg",
   agent: "Gabriel Fono",
   post: "june 20 1991",
-  price: "4000000",
+  price: "2000",
   city: "Manassas",
-  bed: "7bed rooms"
+  bed: "7bed rooms",
+  Price: "4000000",
+  floorSpace: 2000,
+  extras: ["elevator", "gyms"],
+  homeType: "Apartment"
 }, {
   address: "8383 Fairfax County",
   image: "images/img-2.jpg",

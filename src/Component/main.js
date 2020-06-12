@@ -1,20 +1,21 @@
 import React from "react";
-import Filter from "./filter";
 import Listing from "./listing";
+import Filter from "./filter";
 import styled from "@emotion/styled";
+
 const Main = (props) => {
-  const MainContent = styled.main`
-    display: flex;
-    justify-content: space-between;
-    align-items:flex-start;
-    background-color:#f2f2f2;
-    width: 100vw;
+  const Section = styled.section`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: " filter lister ";
+    background-color: #f2f2f2;
   `;
   return (
-    <MainContent>
-      <Filter  change= {props.change} globalState = {props.globalState}/>
-      <Listing listing = {props.data}  />
-    </MainContent>
+    <Section>
+      <Filter change={props.change} globalState={props.globalState} />
+      <Listing data={props.data} />
+    </Section>
   );
 };
 
