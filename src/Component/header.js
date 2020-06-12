@@ -9,13 +9,14 @@ const Header = () => {
     height: 60px;
     padding: 0 2rem;
     background: linear-gradient(120deg, #062b41, #052131);
+    /* background: rgba(255, 255, 255, 0.8); */
   `;
   const Logo = styled.div`
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     color: white;
     transition: color 0.3s ease-in-out;
-    cursor:pointer;
+    cursor: pointer;
     &:hover {
       color: orange;
     }
@@ -37,10 +38,10 @@ const Header = () => {
   const Button = styled.a`
     text-decoration: none;
     padding: 5px;
-    margin-left:10px;
+    margin-left: 10px;
     border: 1px solid orange;
-    background-color:orange;
-    cursor:pointer;
+    background-color: orange;
+    cursor: pointer;
     color: white;
     font-size: 1rem;
   `;

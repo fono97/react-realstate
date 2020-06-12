@@ -14,7 +14,7 @@ const Listing = (props) => {
     margin-top: 1.4rem;
   `;
   const ConTitle = styled.div`
-    text-align: center;
+    text-align: start;
   `;
 
   const Title = styled.h2`
@@ -22,8 +22,7 @@ const Listing = (props) => {
     color: black;
   `;
   const Properties = styled.div`
-    width: 90vw;
-    margin: 0 auto;
+    width: 100vw;
     max-width: 600px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -44,7 +43,8 @@ const Listing = (props) => {
   `;
   const Container = styled.div`
     opacity: 0;
-    background-color: rgba(78, 2, 229, 0.8);
+    /* background-color: rgba(78, 2, 229, 0.8); */
+    background: rgba(100, 10, 150, 0.8);
     border-radius: 5px;
     position: absolute;
     top: 1;
@@ -80,7 +80,7 @@ const Listing = (props) => {
   const ImageContainer = styled.div`
     overflow: hidden;
     cursor: pointer;
-    height: 20rem;
+    height: 18rem;
     z-index: 3;
   `;
   const Image = styled.img`
@@ -114,7 +114,7 @@ const Listing = (props) => {
     width: 50px;
     height: 50px;
     margin-right: 15px;
-    padding-top:10%;
+    padding-top: 10%;
   `;
   const ImgPhoto = styled.img`
     width: 100%;
@@ -139,21 +139,22 @@ const Listing = (props) => {
     justify-content: center;
     align-items: center;
     padding-top: 0px;
-   
   `;
   const Pagination = styled.div`
-    margin-left: 7vw;
+    padding:10px;
+    width:600px;
   `;
 
   const Ul = styled.ul`
     width: 30%;
+    float:left;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   `;
   const Li1 = styled.li`
     display: block;
-    padding: 0px 3px;
+    padding-right: 3px;
     color: white;
     list-style: none;
     font-size: 1.1rem;
@@ -231,7 +232,7 @@ const Listing = (props) => {
 
   return (
     <Section>
-      <Pagination>
+      <div>
         <TitleContainer>
           <Input />
           <Select>
@@ -254,7 +255,7 @@ const Listing = (props) => {
             </div>
           </Icon>
         </TitleContainer>
-      </Pagination>
+      </div>
       <ConTitle>
         <Title>these are all the properties</Title>
       </ConTitle>
