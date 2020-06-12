@@ -10,7 +10,7 @@ import {
 
 const Listing = (props) => {
   const Section = styled.section`
-    grid-area: lister;
+    grid-area: main;
     margin-top: 1.4rem;
   `;
   const ConTitle = styled.div`

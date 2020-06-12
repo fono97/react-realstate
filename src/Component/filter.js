@@ -4,11 +4,16 @@ import styled from "@emotion/styled";
 
 const Filter = (props) => {
 const Section = styled.section`
- margin-left:2rem;
- grid-area:filter;
+display:flex;
+justify-content:flex-end;
+align-items:flex-start;
+ grid-area:sidebar;
   width: 100%;
 `;
-const CenterBox = styled.div``;
+const CenterBox = styled.div`
+margin-right:4rem;
+text-align:left;
+`;
 
 const Title = styled.h4`
   font-family: "Arial, Helvetica, sans-serif";
@@ -49,7 +54,8 @@ const Label = styled.label`
 `;
 const LabelText = styled.span`
   display: inline-block;
-  width: 100px;
+  width:70px;
+  margin-right:2rem;
 `;
 const Checkout = styled.input`
   width: 13px;

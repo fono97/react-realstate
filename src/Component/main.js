@@ -8,7 +8,7 @@ const Main = (props) => {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: " filter lister ";
+    grid-template-areas: " sidebar main ";
     background-color: #f2f2f2;
   `;
   return (

@@ -45,8 +45,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Main change={this.change} globalState={this.state} data={this.state.data} />
-        {/* <Filter change={this.change} globalState={this.state}   />
-        <Listing data={this.state.data} /> */}
+      
 
       </div>
     );
