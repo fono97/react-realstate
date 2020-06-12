@@ -114,6 +114,7 @@ const Listing = (props) => {
     width: 50px;
     height: 50px;
     margin-right: 15px;
+    padding-top:10%;
   `;
   const ImgPhoto = styled.img`
     width: 100%;
@@ -133,8 +134,12 @@ const Listing = (props) => {
     }
   `;
   const ImgAgentDetail = styled.div`
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+   
   `;
   const Pagination = styled.div`
     margin-left: 7vw;
@@ -188,13 +193,13 @@ const Listing = (props) => {
         <Article key={i}>
           <div className="single-items">
             <Info>
-              <ImageContainer className="image-container">
+              <ImageContainer>
                 <Image src={listing.image} />
               </ImageContainer>
               <Address>{listing.address}</Address>
               <Container>
-                <AgentListing className="detail-listing">
-                  <AgentDetail className="agent-detail">
+                <AgentListing>
+                  <AgentDetail>
                     <ImgAgent>
                       <ImgPhoto src={listing.ImgAgent} />
                     </ImgAgent>

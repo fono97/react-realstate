@@ -48,9 +48,9 @@ const Header = () => {
     <HeaderStyle>
       <Logo>first react project</Logo>
       <NavBar>
-        <Link>about me</Link>
-        <Link>projects</Link>
-        <Link>ads</Link>
+        <Link>self taught</Link>
+        <Link>youtuber</Link>
+        <Link>blogger</Link>
         <Button>button</Button>
       </NavBar>
     </HeaderStyle>
