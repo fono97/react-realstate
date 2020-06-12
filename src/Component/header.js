@@ -6,7 +6,7 @@ const Header = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 80px;
     padding: 0 2rem;
     background: linear-gradient(120deg, #062b41, #052131);
     /* background: rgba(255, 255, 255, 0.8); */
@@ -49,10 +49,11 @@ const Header = () => {
     <HeaderStyle>
       <Logo>first react project</Logo>
       <NavBar>
-        <Link>self taught</Link>
-        <Link>youtuber</Link>
-        <Link>blogger</Link>
-        <Button>button</Button>
+        <Link>About me: </Link>
+        <Link>Self taught</Link>
+        <Link>Youtuber</Link>
+        <Link>Blogger</Link>
+        <Button>More</Button>
       </NavBar>
     </HeaderStyle>
   );
