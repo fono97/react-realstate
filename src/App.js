@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import Header from "./Component/header";
 import data from "./Component/listingdata/data";
-import Main from "./Component/main"
-
+import Main from "./Component/main";
 
 class App extends Component {
-  
   constructor() {
-    super()
+    super();
     this.state = {
-      name :"fono",
+      name: "",
       data,
       min_price: 0,
       max_price: 1000000,
@@ -18,14 +16,16 @@ class App extends Component {
       elevator: false,
       swimming_pool: false,
       finished_basement: false,
-      gyms: false
+      gyms: false,
     };
-    this.change = this.change.bind(this)
+
+    this.change = this.change.bind(this);
   }
-  
+
   change(event) {
-    console.log(event.target.value)
-   
+    
+    console.log(event.target.value);
+
     var name = event.target.name;
     var value =
       event.target.type === "checkbox"
@@ -44,9 +44,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Main change={this.change} globalState={this.state} data={this.state.data} />
-      
-
+        <Main
+          change={this.change}
+          globalState={this.state}
+          data={this.state.data}
+          
+        />
       </div>
     );
   }

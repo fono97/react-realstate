@@ -11,9 +11,10 @@ const Main = (props) => {
     grid-template-areas: " sidebar main ";
     background-color: #f2f2f2;
   `;
+   
   return (
     <Section>
-      <Filter change={props.change} globalState={props.globalState} />
+      <Filter  globalState={props.globalState}  />
       <Listing data={props.data} />
     </Section>
   );
