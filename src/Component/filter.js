@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styled from "@emotion/styled";
 
@@ -65,14 +65,22 @@ const Filter = (props) => {
       <CenterBox>
         <Title>Filter</Title>
         <Container>
-          <Select  name ="neighborhood" >
+          <Select
+            name="neighborhood"
+            value={props.globalState.neighborhood}
+            onChange={props.change}
+          >
             <Option value="fairfax">fairfax</Option>
             <Option value="Manassas">Manassas</Option>
             <Option value="Miami">Miami</Option>
           </Select>
         </Container>
         <Container>
-          <Select   name="housetype" >
+          <Select
+            name="housetype"
+            value={props.globalState.housetype}
+            onChange={props.change}
+          >
             <Option value="Ranch"> Ranch</Option>
             <Option value="Apartment"> Apartment</Option>
             <Option value="Studio"> Studio</Option>
@@ -83,10 +91,11 @@ const Filter = (props) => {
           <Select
             name="bedrooms"
             className=" filters bedrooms"
-            
+            onChange={props.change}
+            value={props.globalState.bedrooms}
           >
             <Option value="2"> 2 BR</Option>
-            <Option value="3"> 2 BR</Option>
+            <Option value="3"> 3 BR</Option>
             <Option value="4"> 4 BR</Option>
           </Select>
         </Container>
@@ -97,29 +106,29 @@ const Filter = (props) => {
               type="text"
               name="min_price"
               value={props.globalState.min_price}
-              
+              onChange={props.change}
             />
             <InputLeft
               type="text"
               name="max_price"
               value={props.globalState.max_price}
-              
+              onChange={props.change}
             />
           </Container>
           <Container>
             <Span>Floor space</Span>
-            <InputRight
+            <input
               type="text"
               name="min_floor_space"
               value={props.globalState.min_floor_space}
-              
+              onChange={props.change}
             />
-            <InputLeft
+            <input
               type="text"
               name="max_floor_space"
               value={props.globalState.max_floor_space}
               className="max_floor_space"
-              
+              onChange={props.change}
             />
           </Container>
         </SpaceContainer>
@@ -127,30 +136,40 @@ const Filter = (props) => {
           <h4>extras</h4>
           <Label htmlFor="extras">
             <LabelText>Elevator</LabelText>
-            <Checkout name="elevator" value="elevator" type="checkbox" />
+            <Checkout
+              onChange={props.change}
+              name="elevator"
+              value="elevator"
+              type="checkbox"
+              checked={props.globalState.elevator}
+            />
           </Label>
           <Label htmlFor="extras">
             <LabelText>Swimming Pool</LabelText>
             <Checkout
               name="swimming_pool"
-              value="swimming_pool"
+            
+              checked={props.globalState.swimming_pool}
               type="checkbox"
+              onChange={props.change}
             />
           </Label>
           <Label htmlFor="extras">
             <LabelText>finished Basement</LabelText>
             <Checkout
               name="finished_basement"
-              value="finished_basement"
+              checked={props.globalState.finished_basement}
               type="checkbox"
+              onChange={props.change}
             />
           </Label>
           <Label htmlFor="extras">
             <LabelText>gyms</LabelText>
             <Checkout
               name="gyms"
-              value="gyms"
               type="checkbox"
+              checked={props.globalState.gyms}
+              onChange={props.change}
             />
           </Label>
         </SpaceContainer>

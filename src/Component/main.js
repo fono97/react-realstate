@@ -14,8 +14,8 @@ const Main = (props) => {
    
   return (
     <Section>
-      <Filter  globalState={props.globalState}  />
-      <Listing data={props.data} />
+      <Filter globalState={props.globalState} change={props.change} />
+      <Listing data={props.data}  />
     </Section>
   );
 };

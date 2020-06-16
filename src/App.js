@@ -7,50 +7,39 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
       data,
       min_price: 0,
-      max_price: 1000000,
+      max_price: 10000,
       min_floor_space: 0,
       max_floor_space: 5000,
       elevator: false,
       swimming_pool: false,
       finished_basement: false,
-      gyms: false,
+      gyms: true,
     };
 
     this.change = this.change.bind(this);
   }
 
   change(event) {
-    
-    console.log(event.target.value);
-
-    var name = event.target.name;
-    var value =
-      event.target.type === "checkbox"
-        ? event.target.checked
-        : event.target.value;
-    this.setState(
-      {
-        [name]: value,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    const { name, value, type, checked } = event.target;
+    type === "checkbox"
+      ? this.setState({ [name]: checked })
+      : this.setState({ [name]: value });
   }
   render() {
     return (
+      <React.StrictMode>
       <div className="App">
         <Header />
         <Main
           change={this.change}
           globalState={this.state}
           data={this.state.data}
-          
         />
+        <h1>{console.log(this.state)}</h1>
       </div>
+      </React.StrictMode>
     );
   }
 }

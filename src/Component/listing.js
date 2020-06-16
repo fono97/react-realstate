@@ -189,7 +189,6 @@ const Listing = (props) => {
   `;
   const loopListings = () => {
     const listings = props.data;
-    console.log("strick mode is bad")
     return listings.map((listing, i) => {
       return (
         <Article key={i}>
