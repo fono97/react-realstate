@@ -102,13 +102,13 @@ const Filter = (props) => {
         <SpaceContainer>
           <Container>
             <Span>Price</Span>
-            <InputRight
+            <input
               type="text"
               name="min_price"
               value={props.globalState.min_price}
               onChange={props.change}
             />
-            <InputLeft
+            <input
               type="text"
               name="max_price"
               value={props.globalState.max_price}
