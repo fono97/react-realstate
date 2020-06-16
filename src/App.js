@@ -4,8 +4,8 @@ import data from "./Component/listingdata/data";
 import Main from "./Component/main";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data,
       min_price: 0,
@@ -21,15 +21,14 @@ class App extends Component {
     this.change = this.change.bind(this);
   }
 
-  change(event) {
-    const { name, value, type, checked } = event.target;
+  change({target}) {
+    const { name, value, type, checked } = target;
     type === "checkbox"
       ? this.setState({ [name]: checked })
       : this.setState({ [name]: value });
   }
   render() {
     return (
-      <React.StrictMode>
       <div className="App">
         <Header />
         <Main
@@ -39,7 +38,6 @@ class App extends Component {
         />
         <h1>{console.log(this.state)}</h1>
       </div>
-      </React.StrictMode>
     );
   }
 }

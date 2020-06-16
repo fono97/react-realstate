@@ -112,7 +112,6 @@ const Filter = (props) => {
               className="Checkout"
               onChange={props.change}
               name="elevator"
-              value="elevator"
               type="checkbox"
               checked={props.globalState.elevator}
             />
