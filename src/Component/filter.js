@@ -37,12 +37,12 @@ const Filter = (props) => {
     color: black;
     font-size: 1.1rem;
   `;
-  const InputRight = styled.input`
+  const InputMin = styled.input`
     width: 45px;
     border-radius: 4px;
     outline: none;
   `;
-  const InputLeft = styled.input`
+  const InputMax = styled.input`
     width: 45px;
     margin-left: 10px;
     border-radius: 4px;
@@ -102,13 +102,13 @@ const Filter = (props) => {
         <SpaceContainer>
           <Container>
             <Span>Price</Span>
-            <input
+            <InputMin
               type="text"
               name="min_price"
               value={props.globalState.min_price}
               onChange={props.change}
             />
-            <input
+            <InputMax
               type="text"
               name="max_price"
               value={props.globalState.max_price}
@@ -117,13 +117,13 @@ const Filter = (props) => {
           </Container>
           <Container>
             <Span>Floor space</Span>
-            <input
+            <InputMin
               type="text"
               name="min_floor_space"
               value={props.globalState.min_floor_space}
               onChange={props.change}
             />
-            <input
+            <InputMax
               type="text"
               name="max_floor_space"
               value={props.globalState.max_floor_space}
