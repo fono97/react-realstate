@@ -10,10 +10,9 @@ var data = [{
   ImgAgent: "images/img-1.jpg",
   agent: "Gabriel Fono",
   post: "june 20 1991",
-  price: "2000",
-  city: "Manassas",
+  price: 100000,
+  city: "fairfax",
   bed: "7bed rooms",
-  Price: "4000000",
   floorSpace: 2000,
   extras: ["elevator", "gyms"],
   homeType: "Apartment"
@@ -23,45 +22,50 @@ var data = [{
   ImgAgent: "images/img-2.jpg",
   agent: "Tabongue Yannick",
   post: "November 19,1990",
-  price: "3000000",
-  city: "Fairfax",
-  bed: "3bed rooms"
+  price: 200000,
+  city: "Manassas",
+  bed: "3bed rooms",
+  homeType: "Studio"
 }, {
   address: "78983 Woodbridge ",
   image: "images/img-3.jpg",
   ImgAgent: "images/img-3.jpg",
   agent: "Gabriel batisseur",
   post: "October 19,1930",
-  price: "5000000",
-  city: "Woodbrige",
-  bed: "9bed rooms"
+  price: 300000,
+  city: "fairfax",
+  bed: "9bed rooms",
+  homeType: "Room"
 }, {
   address: "78983 Woodbridge ",
   image: "images/img-4.jpg",
   ImgAgent: "images/img-3.jpg",
   agent: "Gabriel batisseur",
   post: "september 19,1930",
-  price: "5000000",
-  city: "Woodbrige",
-  bed: "9bed rooms"
+  price: 400000,
+  city: "Arlington",
+  bed: "9bed rooms",
+  homeType: "Ranch"
 }, {
   address: "78983 Woodbridge ",
   image: "images/img-5.jpg",
   ImgAgent: "images/img-3.jpg",
   agent: "Gabriel batisseur",
   post: "October 19,1930",
-  price: "5000000",
-  city: "Woodbrige",
-  bed: "9bed rooms"
+  price: 500000,
+  city: "Miami",
+  bed: "9bed rooms",
+  homeType: "Studio"
 }, {
   address: "78983 Woodbridge ",
   image: "images/img-6.jpg",
   ImgAgent: "images/img-3.jpg",
   agent: "Gabriel batisseur",
   post: "October 19,1930",
-  price: "5000000",
-  city: "Woodbrige",
-  bed: "9bed rooms"
+  price: 600000,
+  city: "Woodbridge",
+  bed: "9bed rooms",
+  homeType: "Apartment"
 }];
 var _default = data;
 exports["default"] = _default;

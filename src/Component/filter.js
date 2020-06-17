@@ -7,10 +7,13 @@ const Filter = (props) => {
         <div className="Container">
           <select
             className=" Select"
-            name="neighborhood"
-            value={props.globalState.neighborhood}
+            name="city"
+            value={props.globalState.city}
             onChange={props.change}
           >
+            <option className="All" value="All">
+              All
+            </option>
             <option className="Option" value="fairfax">
               fairfax
             </option>
@@ -20,15 +23,25 @@ const Filter = (props) => {
             <option className="Option" value="Miami">
               Miami
             </option>
+            <option className="Option" value="Arlington">
+              Arlington
+            </option>
+            <option className="Option" value="Woodbridge">
+              Woodbridge
+            </option>
           </select>
         </div>
         <div className="Container">
           <select
             className="Select"
-            name="housetype"
-            value={props.globalState.housetype}
+            name="homeType"
+            value={props.globalState.homeType}
             onChange={props.change}
           >
+            <option className="Option" value="All">
+              {" "}
+              All 
+            </option>
             <option className="Option" value="Ranch">
               {" "}
               Ranch
@@ -54,17 +67,17 @@ const Filter = (props) => {
             onChange={props.change}
             value={props.globalState.bedrooms}
           >
-            <option className="Option" value="2">
+            <option className="Option" value="0 BR">
               {" "}
-              2 BR
+              0+ BR
             </option>
-            <option className="Option" value="3">
+            <option className="Option" value="1 BR">
               {" "}
-              3 BR
+              1+ BR
             </option>
-            <option className="Option" value="4">
+            <option className="Option" value="2 BR">
               {" "}
-              4 BR
+              2+ BR
             </option>
           </select>
         </div>
@@ -136,7 +149,7 @@ const Filter = (props) => {
               onChange={props.change}
             />
           </label>
-          <label lassName="Label" htmlFor="extras">
+          <label className="Label" htmlFor="extras">
             <label className="LabelText">gyms</label>
             <input
               className="Checkout"

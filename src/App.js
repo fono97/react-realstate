@@ -8,25 +8,49 @@ class App extends Component {
     super(props);
     this.state = {
       data,
+      city: "All",
+      homeType: "All",
+      bedrooms: "0 ",
       min_price: 0,
-      max_price: 10000,
+      max_price: 1000000,
       min_floor_space: 0,
       max_floor_space: 5000,
       elevator: false,
       swimming_pool: false,
       finished_basement: false,
       gyms: true,
+      filteredData: data,
     };
 
     this.change = this.change.bind(this);
+    this.filteredData = this.filteredData.bind(this);
   }
 
-  change({target}) {
-    const { name, value, type, checked } = target;
+  change(event) {
+    const { name, value, type, checked } = event.target;
     type === "checkbox"
       ? this.setState({ [name]: checked })
-      : this.setState({ [name]: value });
+      : this.setState({ [name]: value }, () => {
+          this.filteredData();
+        });
   }
+  filteredData() {
+    var newData = this.state.filteredData.filter((item) => {
+      return (
+        item.price >= this.state.min_price && item.price <= this.state.max_price
+      );
+    });
+    if (this.state.city !=="All"){
+      newData = newData.filter((item) =>{
+        return item.city ===this.state.city
+      })
+    }
+    this.setState({
+      
+      filteredData: newData,
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -34,9 +58,8 @@ class App extends Component {
         <Main
           change={this.change}
           globalState={this.state}
-          data={this.state.data}
+          data={this.state.filteredData}
         />
-        <h1>{console.log(this.state)}</h1>
       </div>
     );
   }

@@ -65,3 +65,176 @@
   grid-template-areas: " sidebar main ";
   background-color: #f2f2f2;
 }
+/*this is the main section */
+.Listing{
+   grid-area: main;
+    margin-top: 1.4rem;
+}
+.ConTitle{
+  text-align: start;
+}
+.Title{
+   font-family: "Arial, Helvetica, sans-serif";
+    color: black;
+}
+.Properties{
+     width: 100vw;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+.Article{
+    background-color: white;
+    &:hover {
+      Address {
+        opacity: 0;
+      }
+    }
+}
+.Info{
+  position: relative;
+    cursor: pointer;
+}
+.Container{
+    background: rgba(100, 10, 150, 0.8);
+    border-radius: 5px;
+    position: absolute;
+    top: 1;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    &:hover {
+      Address {
+        opacity: 0;
+      }
+}
+.Address{
+      display: block;
+    position: absolute;
+    opacity: 1;
+    z-index: 4;
+    top: 80%;
+    left: 10%;
+    color: white;
+    height: fit-content;
+    font-size: 1.3rem;
+    transition: all 0.5s ease-in-out;
+}
+.ImageContainer{
+     overflow: hidden;
+    cursor: pointer;
+    height: 18rem;
+    z-index: 3;
+}
+.Image{
+  height: 100%;
+    width: 100%;
+}
+.Location{
+  margin-left: 20px;
+    color: orange;
+}
+.Span{
+    display: inline-block;
+    margin-left: 10px;
+    color: black;
+}
+.AgentListing{
+   position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+}
+.AgentDetail{
+     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.ImgAgent{
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    padding-top: 10%;
+}
+.ImgPhoto{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.ViewListing{
+      padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    transition: background-color 0.5s ease-in-out;
+    &:hover {
+      background-color: black;
+    }
+}
+.ImgAgentDetail{
+      display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+}
+.Pagination{
+  padding: 10px;
+    width: 600px;
+}
+.Ul{
+      width: 30%;
+    float: left;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.Li1{
+     display: block;
+    padding-right: 3px;
+    color: white;
+    list-style: none;
+    font-size: 1.1rem;
+    background-color: red;
+    cursor: pointer;
+}
+.Li {
+    list-style: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.TitleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+.Input{
+  width: 70%;
+    height: 1.2rem;
+}
+.Select{
+   width: 25%;
+    height: 1.3rem;
+}
+.Option{
+
+}
+.Icon{
+   width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
