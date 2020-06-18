@@ -25,33 +25,33 @@ class App extends Component {
     this.change = this.change.bind(this);
     this.filteredData = this.filteredData.bind(this);
   }
-
   change(event) {
     const { name, value, type, checked } = event.target;
     type === "checkbox"
       ? this.setState({ [name]: checked })
       : this.setState({ [name]: value }, () => {
+          console.log(this.state);
           this.filteredData();
         });
   }
   filteredData() {
-    var newData = this.state.filteredData.filter((item) => {
+    var newData = this.state.data.filter((item) => {
       return (
         item.price >= this.state.min_price && item.price <= this.state.max_price
       );
     });
-    if (this.state.city !=="All"){
-      newData = newData.filter((item) =>{
-        return item.city ===this.state.city
-      })
+    if (this.state.city !== "All") {
+      newData = newData.filter((item) => {
+        return item.city === this.state.city;
+      });
     }
     this.setState({
-      
       filteredData: newData,
     });
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <Header />

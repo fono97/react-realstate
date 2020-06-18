@@ -8,11 +8,11 @@ const Filter = (props) => {
           <select
             className=" Select"
             name="city"
-            value={props.globalState.city}
+            // value={props.globalState.city}
             onChange={props.change}
           >
-            <option className="All" value="All">
-              All
+            <option className="Option" value="All">
+              All homes
             </option>
             <option className="Option" value="fairfax">
               fairfax
@@ -40,7 +40,7 @@ const Filter = (props) => {
           >
             <option className="Option" value="All">
               {" "}
-              All 
+              All
             </option>
             <option className="Option" value="Ranch">
               {" "}
