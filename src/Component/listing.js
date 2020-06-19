@@ -1,11 +1,11 @@
 import React from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {
-//   faMapMarker,
-//   faDollarSign,
-//   faListUl,
-//   faTh,
-// } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarker,
+  faDollarSign,
+  faListUl,
+  faTh,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Listing = (props) => {
   const loopListings = () => {
@@ -33,7 +33,7 @@ const Listing = (props) => {
                     <div className="ImgAgentDetail">
                       <p>{listing.name}</p>
                       <p>{listing.post}</p>
-                      <span>{listing.bed}</span>
+                      <span>{listing.bedrooms} bedrooms</span>
                       <p className="ViewListing"> View listing</p>
                     </div>
                   </div>
@@ -42,11 +42,11 @@ const Listing = (props) => {
             </div>
             <div className="location">
               <p>
-                {/* <FontAwesomeIcon icon={faDollarSign} /> */}
+                <FontAwesomeIcon icon={faDollarSign} />
                 <span className="Span">{listing.price}</span>
               </p>
               <p>
-                {/* <FontAwesomeIcon icon={faMapMarker} /> */}
+                <FontAwesomeIcon icon={faMapMarker} />
                 <span className="Span-1">{listing.city}</span>
               </p>
             </div>
@@ -73,10 +73,10 @@ const Listing = (props) => {
           </select>
           <div className="Icon">
             <div>
-              {/* <FontAwesomeIcon icon={faListUl} /> */}
+              <FontAwesomeIcon icon={faListUl} />
             </div>
             <div>
-              {/* <FontAwesomeIcon icon={faTh} /> */}
+              <FontAwesomeIcon icon={faTh} />
             </div>
           </div>
         </div>

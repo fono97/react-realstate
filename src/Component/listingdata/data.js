@@ -8,6 +8,7 @@ let data = [
     price: 100000,
     city: "fairfax",
     bed: "7bed rooms",
+    bedrooms:"1",
     floorSpace: 2000,
     extras: ["elevator", "gyms"],
     homeType: "Apartment",
@@ -21,6 +22,7 @@ let data = [
     price: 200000,
     city: "Manassas",
     bed: "3bed rooms",
+    bedrooms: "2",
     homeType: "Studio",
   },
   {
@@ -32,6 +34,7 @@ let data = [
     price: 300000,
     city: "fairfax",
     bed: "9bed rooms",
+    bedrooms: "2",
     homeType: "Room",
   },
   {
@@ -41,8 +44,9 @@ let data = [
     agent: "Gabriel batisseur",
     post: "september 19,1930",
     price: 400000,
-    city: "Arlington",
+    city: "fairfax",
     bed: "9bed rooms",
+    bedrooms: "4",
     homeType: "Ranch",
   },
   {
@@ -54,6 +58,7 @@ let data = [
     price: 500000,
     city: "Miami",
     bed: "9bed rooms",
+    bedrooms: "4",
     homeType: "Studio",
   },
   {
@@ -65,6 +70,7 @@ let data = [
     price: 600000,
     city: "Woodbridge",
     bed: "9bed rooms",
+    bedrooms: "4",
     homeType: "Apartment",
   },
 ];

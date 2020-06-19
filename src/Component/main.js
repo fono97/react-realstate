@@ -4,10 +4,10 @@ import Filter from "./filter";
 
 const Main = (props) => {
   return (
-    <section className="section-main">
+    <main className = "Main">
       <Filter globalState={props.globalState} change={props.change} />
-      <Listing data={props.data} />
-    </section>
+      <Listing data={props.data} populateAction ={props.populateAction}  />
+    </main>
   );
 };
 

@@ -13,6 +13,7 @@ var data = [{
   price: 100000,
   city: "fairfax",
   bed: "7bed rooms",
+  bedrooms: "1",
   floorSpace: 2000,
   extras: ["elevator", "gyms"],
   homeType: "Apartment"
@@ -25,6 +26,7 @@ var data = [{
   price: 200000,
   city: "Manassas",
   bed: "3bed rooms",
+  bedrooms: "2",
   homeType: "Studio"
 }, {
   address: "78983 Woodbridge ",
@@ -35,6 +37,7 @@ var data = [{
   price: 300000,
   city: "fairfax",
   bed: "9bed rooms",
+  bedrooms: "2",
   homeType: "Room"
 }, {
   address: "78983 Woodbridge ",
@@ -43,8 +46,9 @@ var data = [{
   agent: "Gabriel batisseur",
   post: "september 19,1930",
   price: 400000,
-  city: "Arlington",
+  city: "fairfax",
   bed: "9bed rooms",
+  bedrooms: "4",
   homeType: "Ranch"
 }, {
   address: "78983 Woodbridge ",
@@ -55,6 +59,7 @@ var data = [{
   price: 500000,
   city: "Miami",
   bed: "9bed rooms",
+  bedrooms: "4",
   homeType: "Studio"
 }, {
   address: "78983 Woodbridge ",
@@ -65,6 +70,7 @@ var data = [{
   price: 600000,
   city: "Woodbridge",
   bed: "9bed rooms",
+  bedrooms: "4",
   homeType: "Apartment"
 }];
 var _default = data;

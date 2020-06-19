@@ -1,5 +1,7 @@
 import React from "react";
-const Filter = (props) => {
+ const Filter = (props) => {
+
+  
   return (
     <section className="Section">
       <div className="CenterBox">
@@ -8,7 +10,7 @@ const Filter = (props) => {
           <select
             className=" Select"
             name="city"
-            // value={props.globalState.city}
+            value={props.globalState.city}
             onChange={props.change}
           >
             <option className="Option" value="All">
@@ -67,15 +69,15 @@ const Filter = (props) => {
             onChange={props.change}
             value={props.globalState.bedrooms}
           >
-            <option className="Option" value="0 BR">
+            <option className="Option" value="0">
               {" "}
               0+ BR
             </option>
-            <option className="Option" value="1 BR">
+            <option className="Option" value="1 ">
               {" "}
               1+ BR
             </option>
-            <option className="Option" value="2 BR">
+            <option className="Option" value="2">
               {" "}
               2+ BR
             </option>
@@ -125,6 +127,7 @@ const Filter = (props) => {
               className="Checkout"
               onChange={props.change}
               name="elevator"
+              value="elevator"
               type="checkbox"
               checked={props.globalState.elevator}
             />

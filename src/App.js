@@ -4,13 +4,13 @@ import data from "./Component/listingdata/data";
 import Main from "./Component/main";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data,
       city: "All",
       homeType: "All",
-      bedrooms: "0 ",
+      bedrooms: "0",
       min_price: 0,
       max_price: 1000000,
       min_floor_space: 0,
@@ -20,11 +20,14 @@ class App extends Component {
       finished_basement: false,
       gyms: true,
       filteredData: data,
+      populateFormData:[]
     };
 
     this.change = this.change.bind(this);
     this.filteredData = this.filteredData.bind(this);
+    this.populateForm = this.populateForm.bind(this)
   }
+
   change(event) {
     const { name, value, type, checked } = event.target;
     type === "checkbox"
@@ -37,21 +40,55 @@ class App extends Component {
   filteredData() {
     var newData = this.state.data.filter((item) => {
       return (
-        item.price >= this.state.min_price && item.price <= this.state.max_price
+        item.price >= this.state.min_price &&
+        item.price <= this.state.max_price &&
+        item.bedrooms > this.state.bedrooms
       );
     });
     if (this.state.city !== "All") {
       newData = newData.filter((item) => {
         return item.city === this.state.city;
       });
+      if (this.state.homeType !== "All") {
+        newData = newData.filter((item) => {
+          return item.homeType === this.state.homeType;
+        });
+      }
+
+      this.setState({
+        filteredData: newData,
+      });
     }
+  }
+  populateForm(){
+    //city
+    let cities= this.state.data.map(()=>{
+      return item.city
+    })
+    cities = new Set(cities)
+    cities = [...cities]
+    //hometype
+    let homeType = this.state.data.map(() => {
+      return item.city
+    })
+    homeType = new Set(homeType)
+    homeType = [...homeType]
+    // bedrooms
+    let bedrooms = this.state.data.map(() => {
+      return item.city
+    })
+    bedrooms = new Set(bedrooms)
+    bedrooms = [...bedrooms]
     this.setState({
-      filteredData: newData,
-    });
+      populateFormData:{
+        homeType,
+        bedrooms,
+        cities
+      }
+    })
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <Header />
@@ -59,6 +96,7 @@ class App extends Component {
           change={this.change}
           globalState={this.state}
           data={this.state.filteredData}
+          populateAction = {this.populateForm}
         />
       </div>
     );
