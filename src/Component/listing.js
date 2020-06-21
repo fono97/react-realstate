@@ -6,8 +6,21 @@ import {
   faListUl,
   faTh,
 } from "@fortawesome/free-solid-svg-icons";
+// import styled from '@emotion/styled'
 
 const Listing = (props) => {
+  const Cursor = {
+    cursor:"pointer",
+    display:"block"
+  }
+  // const properties = styled.div`
+  //  width: 100vw;
+  //   max-width: 600px;
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  //   grid-column-gap: 1.5rem;
+  //   grid-row-gap: 2rem;
+  // `
   const loopListings = () => {
     const { data } = props;
     // const listings = props.data;
@@ -20,15 +33,23 @@ const Listing = (props) => {
         <article className="Article" key={i}>
           <div className="single-items">
             <div className="Info">
-              <div className="ImageContainer">
-                <img className="Image" src={listing.image} alt ="this is gabriel" />
+              <div className="ImageContainer" style ={{height:props.globalState.view === "box" ? "15rem" : "18rem"}}>
+                <img
+                  className="Image"
+                  src={listing.image}
+                  alt="this is gabriel"
+                />
               </div>
               <address className="Address">{listing.address}</address>
               <div className="Container-listing">
                 <div className="AgentListing">
                   <div className="AgentDetail">
                     <div className="ImgAgent">
-                      <img className="ImgPhoto " src={listing.ImgAgent} alt = "imgphoto" />
+                      <img
+                        className="ImgPhoto "
+                        src={listing.ImgAgent}
+                        alt="imgphoto"
+                      />
                     </div>
                     <div className="ImgAgentDetail">
                       <p>{listing.name}</p>
@@ -42,11 +63,11 @@ const Listing = (props) => {
             </div>
             <div className="location">
               <p>
-                <FontAwesomeIcon icon={faDollarSign} />
+                    <FontAwesomeIcon  icon={faDollarSign} />
                 <span className="Span">{listing.price}</span>
               </p>
               <p>
-                <FontAwesomeIcon icon={faMapMarker} />
+                <FontAwesomeIcon  icon={faMapMarker} />
                 <span className="Span-1">{listing.city}</span>
               </p>
             </div>
@@ -67,16 +88,19 @@ const Listing = (props) => {
         </div>
         <div className="TitleContainer">
           <p>3920 result found</p>
-          <select>
-            <option>highest price</option>
-            <option>lowest price</option>
+          <select name="sortby" value={props.globalState.sortby} onChange={props.change}>
+            <option value="price-asc" >Highest price</option>
+            <option value="price-dsc" >Lowest price</option>
+           
+            
+            
           </select>
           <div className="Icon">
-            <div>
-              <FontAwesomeIcon icon={faListUl} />
+            <div style={{ cursor:"pointer"}}>
+              <FontAwesomeIcon icon={faListUl}  onClick ={ props.changeView.bind(null, "box")}/>
             </div>
-            <div>
-              <FontAwesomeIcon icon={faTh} />
+            <div style={{ cursor:"pointer"}}>
+              <FontAwesomeIcon icon={faTh} style={{ Cursor }} onClick={props.changeView.bind(null, "long")} />
             </div>
           </div>
         </div>
@@ -84,7 +108,7 @@ const Listing = (props) => {
       <div className="ConTitle">
         <h2 className="Title">these are all the properties</h2>
       </div>
-      <div className="Properties">{loopListings()}</div>
+      <div className="Properties" style={{ gridTemplateColumns: props.globalState.view === "box" ? "repeat(auto-fit, minmax(30%, 1fr))" :"repeat(auto-fit, minmax(100%, 1fr))" }}>{loopListings()}</div>
       <div className="Pagination">
         <ul className="Ul">
           <li className="Li">Prev</li>

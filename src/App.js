@@ -20,12 +20,28 @@ class App extends Component {
       finished_basement: false,
       gyms: true,
       filteredData: data,
-      populateFormData:[]
+      populateFormData: {},
+      sortby: "price-dsc",
+      view:"long"
     };
 
     this.change = this.change.bind(this);
     this.filteredData = this.filteredData.bind(this);
-    this.populateForm = this.populateForm.bind(this)
+    this.populateForm = this.populateForm.bind(this);
+    this.changeView = this.changeView.bind(this);
+  }
+  UNSAFE_componentWillMount() {
+    let data = this.state.data.sort((a, b) => {
+      return a.price - b.price;
+    });
+    this.setState({
+      data,
+    });
+  }
+  changeView(viewName){
+this.setState({
+  view: viewName
+})
   }
 
   change(event) {
@@ -54,38 +70,56 @@ class App extends Component {
           return item.homeType === this.state.homeType;
         });
       }
-
-      this.setState({
-        filteredData: newData,
+    }
+    if (this.state.sortby === "price-dsc") {
+      newData = newData.sort((a, b) => {
+        return a.price - b.price;
       });
     }
-  }
-  populateForm(){
-    //city
-    let cities= this.state.data.map(()=>{
-      return item.city
-    })
-    cities = new Set(cities)
-    cities = [...cities]
-    //hometype
-    let homeType = this.state.data.map(() => {
-      return item.city
-    })
-    homeType = new Set(homeType)
-    homeType = [...homeType]
-    // bedrooms
-    let bedrooms = this.state.data.map(() => {
-      return item.city
-    })
-    bedrooms = new Set(bedrooms)
-    bedrooms = [...bedrooms]
+    if (this.state.sortby === "price-asc") {
+      newData = newData.sort((a, b) => {
+        return b.price - a.price;
+      });
+    }
     this.setState({
-      populateFormData:{
-        homeType,
-        bedrooms,
-        cities
+      filteredData: newData,
+    });
+  }
+
+  populateForm() {
+    //city
+    let cities = this.state.data.map((item) => {
+      return item.city;
+    });
+    cities = new Set(cities);
+    cities = [...cities];
+    cities.sort();
+    //hometype
+    let homeType = this.state.data.map((item) => {
+      return item.homeType;
+    });
+    homeType = new Set(homeType);
+    homeType = [...homeType];
+    homeType.sort();
+    // bedrooms
+    let bedrooms = this.state.data.map((item) => {
+      return item.bedrooms;
+    });
+    bedrooms = new Set(bedrooms);
+    bedrooms = [...bedrooms];
+    bedrooms.sort();
+    this.setState(
+      {
+        populateFormData: {
+          homeType,
+          bedrooms,
+          cities,
+        },
+      },
+      () => {
+        console.log(this.state.populateFormData);
       }
-    })
+    );
   }
 
   render() {
@@ -96,7 +130,8 @@ class App extends Component {
           change={this.change}
           globalState={this.state}
           data={this.state.filteredData}
-          populateAction = {this.populateForm}
+          populateAction={this.populateForm}
+          changeView ={this.changeView}
         />
       </div>
     );

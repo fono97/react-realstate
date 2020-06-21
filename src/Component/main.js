@@ -4,9 +4,18 @@ import Filter from "./filter";
 
 const Main = (props) => {
   return (
-    <main className = "Main">
-      <Filter globalState={props.globalState} change={props.change} />
-      <Listing data={props.data} populateAction ={props.populateAction}  />
+    <main className="Main">
+      <Filter
+        globalState={props.globalState}
+        change={props.change}
+        populateAction={props.populateAction}
+      />
+      <Listing
+        data={props.data}
+        change={props.change}
+        globalState={props.globalState}
+        changeView = {props.changeView}
+      />
     </main>
   );
 };

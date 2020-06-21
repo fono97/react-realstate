@@ -1,19 +1,17 @@
+
+/* start of the main style section */
 .Main{
      display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr;
     grid-template-areas: " sidebar main ";
     background-color: #f2f2f2;
 }
 
-
-
-
-
-
-
+/* end of the main style section */
+/*start of the filter section */
 .Section {
-      display: flex;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     grid-area: sidebar;
@@ -69,7 +67,7 @@ margin: 2rem 0;
   width: 13px;
   height: 13px;
 }
-/*this is the filter section */
+/*end of the filter section */
 /*this is the main section */
 .section-main {
   display: grid;
@@ -94,7 +92,7 @@ margin: 2rem 0;
      width: 100vw;
     max-width: 600px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 }
@@ -150,7 +148,7 @@ margin: 2rem 0;
 .ImageContainer{
      overflow: hidden;
     cursor: pointer;
-    height: 18rem;
+    /* height: 15rem; */
     z-index: 3;
 }
 .Image{
