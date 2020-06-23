@@ -91,6 +91,7 @@ class App extends Component {
         if (n !== null) {
           return true;
         }
+        return ""
       });
     }
 
