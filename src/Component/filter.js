@@ -131,9 +131,9 @@ class Filter extends React.Component {
                 className="Checkout"
                 onChange={this.props.change}
                 name="elevator"
-                value="elevator"
+                // value="elevator"
                 type="checkbox"
-                checked={this.props.globalState.elevator}
+                // checked={this.props.globalState.elevator}
               />
             </label>
             <label className="Label" htmlFor="extras">
@@ -141,7 +141,7 @@ class Filter extends React.Component {
               <input
                 className="Checkout"
                 name="swimming_pool"
-                checked={this.props.globalState.swimming_pool}
+                // checked={this.props.globalState.swimming_pool}
                 type="checkbox"
                 onChange={this.props.change}
               />
@@ -151,7 +151,7 @@ class Filter extends React.Component {
               <input
                 className="Checkout"
                 name="finished_basement"
-                checked={this.props.globalState.finished_basement}
+                // checked={this.props.globalState.finished_basement}
                 type="checkbox"
                 onChange={this.props.change}
               />
@@ -162,7 +162,7 @@ class Filter extends React.Component {
                 className="Checkout"
                 name="gyms"
                 type="checkbox"
-                checked={this.props.globalState.gyms}
+                // checked={this.props.globalState.gyms}
                 onChange={this.props.change}
               />
             </label>

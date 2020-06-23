@@ -1,20 +1,6 @@
 let data = [
   {
-    address: "7598 Duneiden Lane",
-    image: "images/img-1.jpg",
-    ImgAgent: "images/img-1.jpg",
-    agent: "Gabriel Fono",
-    post: "june 20 1991",
-    price: "100000",
-    city: "fairfax",
-    bed: "7bed rooms",
-    bedrooms:"2",
-    floorSpace: 2000,
-    extras: ["elevator", "gyms"],
-    homeType: "Apartment",
-  },
-  {
-    address: "8383 Fairfax County",
+    address: "7598 Duneiden Ln",
     image: "images/img-2.jpg",
     ImgAgent: "images/img-2.jpg",
     agent: "Tabongue Yannick",
@@ -24,9 +10,24 @@ let data = [
     bed: "3bed rooms",
     bedrooms: "2",
     homeType: "Studio",
+    elevator:true
+  },
+
+  {
+    address: "8853 Fork Ln",
+    image: "images/img-2.jpg",
+    ImgAgent: "images/img-2.jpg",
+    agent: "Tabongue Yannick",
+    post: "November 19,1990",
+    price: "200000",
+    city: "Manassas",
+    bed: "3bed rooms",
+    bedrooms: "2",
+    homeType: "Studio",
+    elevator: false
   },
   {
-    address: "78983 Woodbridge ",
+    address: "78983 Fairfax Ln ",
     image: "images/img-3.jpg",
     ImgAgent: "images/img-3.jpg",
     agent: "Gabriel batisseur",
@@ -36,9 +37,10 @@ let data = [
     bed: "9bed rooms",
     bedrooms: "2",
     homeType: "Apartment",
+    elevator: true
   },
   {
-    address: "78983 Woodbridge ",
+    address: "3582 Fairfax Ln ",
     image: "images/img-4.jpg",
     ImgAgent: "images/img-3.jpg",
     agent: "Gabriel batisseur",
@@ -48,9 +50,10 @@ let data = [
     bed: "9bed rooms",
     bedrooms: "4",
     homeType: "Ranch",
+    elevator: false
   },
   {
-    address: "78983 Woodbridge ",
+    address: "925 Maimi Dr ",
     image: "images/img-5.jpg",
     ImgAgent: "images/img-3.jpg",
     agent: "Gabriel batisseur",
@@ -60,6 +63,7 @@ let data = [
     bed: "9bed rooms",
     bedrooms: "4",
     homeType: "Studio",
+    elevator: true
   },
   {
     address: "78983 Woodbridge ",
@@ -72,6 +76,7 @@ let data = [
     bed: "9bed rooms",
     bedrooms: "4",
     homeType: "Apartment",
+    elevator: false
   },
 ];
 export default data;

@@ -9,10 +9,14 @@ import {
 // import styled from '@emotion/styled'
 
 const Listing = (props) => {
+  const result = props.globalState.filteredData.length;
+  const singleResult = "result found";
+  const multipleResult = "results found";
+  const Title = "These are all the properties";
   const Cursor = {
-    cursor:"pointer",
-    display:"block"
-  }
+    cursor: "pointer",
+    display: "block",
+  };
   // const properties = styled.div`
   //  width: 100vw;
   //   max-width: 600px;
@@ -33,7 +37,12 @@ const Listing = (props) => {
         <article className="Article" key={i}>
           <div className="single-items">
             <div className="Info">
-              <div className="ImageContainer" style ={{height:props.globalState.view === "box" ? "15rem" : "18rem"}}>
+              <div
+                className="ImageContainer"
+                style={{
+                  height: props.globalState.view === "box" ? "15rem" : "18rem",
+                }}
+              >
                 <img
                   className="Image"
                   src={listing.image}
@@ -63,11 +72,11 @@ const Listing = (props) => {
             </div>
             <div className="location">
               <p>
-                    <FontAwesomeIcon  icon={faDollarSign} />
+                <FontAwesomeIcon icon={faDollarSign} />
                 <span className="Span">{listing.price}</span>
               </p>
               <p>
-                <FontAwesomeIcon  icon={faMapMarker} />
+                <FontAwesomeIcon icon={faMapMarker} />
                 <span className="Span-1">{listing.city}</span>
               </p>
             </div>
@@ -80,35 +89,67 @@ const Listing = (props) => {
     <section className="Section-listing">
       <div>
         <div className="TitleContainer">
-          <input className="Input" />
+          <input
+            className="Input"
+            name="search"
+            value={props.globalState.search}
+            onChange={props.change}
+          />
           <select className="Select-listing">
             <option>manassas</option>
             <option>fairfax</option>
           </select>
         </div>
         <div className="TitleContainer">
-          <p>3920 result found</p>
-          <select name="sortby" value={props.globalState.sortby} onChange={props.change}>
-            <option value="price-asc" >Highest price</option>
-            <option value="price-dsc" >Lowest price</option>
-           
-            
-            
+          <p>
+            {props.globalState.search === "" && props.globalState.city === "All"
+              ? ""
+              : `${result} ${result <= 1 ? singleResult : multipleResult}`}{" "}
+          </p>
+          <select
+            name="sortby"
+            value={props.globalState.sortby}
+            onChange={props.change}
+          >
+            <option value="price-asc">Highest price</option>
+            <option value="price-dsc">Lowest price</option>
           </select>
           <div className="Icon">
-            <div style={{ cursor:"pointer"}}>
-              <FontAwesomeIcon icon={faListUl}  onClick ={ props.changeView.bind(null, "box")}/>
+            <div style={{ cursor: "pointer" }}>
+              <FontAwesomeIcon
+                icon={faListUl}
+                onClick={props.changeView.bind(null, "box")}
+              />
             </div>
-            <div style={{ cursor:"pointer"}}>
-              <FontAwesomeIcon icon={faTh} style={{ Cursor }} onClick={props.changeView.bind(null, "long")} />
+            <div style={{ cursor: "pointer" }}>
+              <FontAwesomeIcon
+                icon={faTh}
+                style={{ Cursor }}
+                onClick={props.changeView.bind(null, "long")}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="ConTitle">
-        <h2 className="Title">these are all the properties</h2>
+        <h2 className="Title">
+          {" "}
+          {props.globalState.search === "" && props.globalState.city === "All"
+            ? ""
+            : `${result === 1 ? "Only one single property" : `${result === 0 ? "" : Title}`}`}
+        </h2>
       </div>
-      <div className="Properties" style={{ gridTemplateColumns: props.globalState.view === "box" ? "repeat(auto-fit, minmax(30%, 1fr))" :"repeat(auto-fit, minmax(100%, 1fr))" }}>{loopListings()}</div>
+      <div
+        className="Properties"
+        style={{
+          gridTemplateColumns:
+            props.globalState.view === "box"
+              ? "repeat(auto-fit, minmax(30%, 1fr))"
+              : "repeat(auto-fit, minmax(100%, 1fr))",
+        }}
+      >
+        {loopListings()}
+      </div>
       <div className="Pagination">
         <ul className="Ul">
           <li className="Li">Prev</li>
